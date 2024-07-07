@@ -309,8 +309,8 @@ class Pipeline(StableDiffusionPipeline):
         print(avg_prompt_embeds.shape)
         avg_prompt_embeds = avg_prompt_embeds / len(indices_to_alter)
 
-        prompt_embeds = torch.cat([prompt_embeds_2[0].unsqueeze(0), avg_prompt_embeds[1].unsqueeze(0)], dim=0)
-        # prompt_embeds = sum_prompt_embeds
+        # prompt_embeds = torch.cat([prompt_embeds_2[0].unsqueeze(0), avg_prompt_embeds[1].unsqueeze(0)], dim=0)
+        prompt_embeds = sum_prompt_embeds
         
         print(prompt_embeds.shape)
 
